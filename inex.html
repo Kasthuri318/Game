@@ -1,0 +1,103 @@
+<!--Addition Game Program-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        h1{
+            text-shadow: 1px 5px 5px;
+        }
+        .tag{
+            background-color: lightsteelblue;
+            width: 40%;
+            height: 200px;
+            margin-left: 30%;
+            padding-top: 10px;
+            border-radius: 15px;
+        }
+        .b1{
+            border: 4px;
+            border-style: solid;
+            border-color: darkgoldenrod;
+            border-radius: 3px;
+            margin-top: 50px;
+            margin-left: 15px;
+        }
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 900;
+            margin-top: 55px;
+        }
+        .rlt{
+            border: 5px;
+            height: 20px;
+            border-style: double;
+            border-color: forestgreen;
+            margin-top: 50px;
+
+        }
+        .btn{
+            border: none;
+            border-radius: 3px;
+            width: 80px;
+            height: 25px;
+            background-color: rgb(33, 169, 126);
+            color: whitesmoke;  
+            margin: 35px; 
+        }
+        .form1{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">ADDITION GAME</h1>
+    <div class="tag">
+        <form align="center"> 
+          <div class="form1"> 
+            <span><input type="text" class="b1" id="value1" size="3"  readonly></span>
+            <p>+</p> 
+            <span><input type="text" class="b1" id="value2" size="3"  readonly></span>
+            <p>=</p>
+            <input id="userinput" type="text" name="result" class="rlt"> <br><br>
+          </div>
+            <button class="btn" onclick="B1()">Check</button>
+            <input type="button" class="btn" value="Restart" onclick="B2()">
+        </form>
+    </div>
+    <script>
+        let x = Math.ceil(Math.random()*100)
+        let y = Math.ceil(Math.random()*100)
+        document.getElementById("value1").value = x
+        document.getElementById("value2").value = y
+        let result1 = parseInt(x) + parseInt(y)
+        //console.log(typeof(userInputValue))
+        //console.log(typeof(x))
+        //console.log(typeof(y))
+        
+
+        function B1(){
+            let userInputValue = parseInt(document.getElementById("userinput").value)
+            if (result1==userInputValue) {
+                //console.log(userInputValue)
+                alert("Amazing...! Your Answer is Correct...!")
+            }
+            else
+                alert("Oops..! Try Again...!")
+        }
+
+        function B2(){
+            x = Math.ceil(Math.random()*100)
+            y = Math.ceil(Math.random()*100)
+            document.getElementById("value1").value = x
+            document.getElementById("value2").value = y
+
+        }
+
+        
+    </script>
+</body>
+</html>
